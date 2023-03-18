@@ -12,7 +12,7 @@ public class Customer {
     private int customerId;
     private String mobile;
     private String password;
-    private Customer(){
+    public Customer(){
 
     }
     public Customer(int customerId, String mobile, String password) {

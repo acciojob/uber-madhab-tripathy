@@ -49,11 +49,11 @@ public class CustomerServiceImpl implements CustomerService {
 		 Cab cab = null;
 		 for(Driver d : driverList){
 			 cab = d.getCab();
-			 if(cab.isAvailable()){
+			 if(cab.getAvailable()){
 				 break;
 			 }
 		 }
-		 if(cab != null && !cab.isAvailable()){
+		 if(cab != null && !cab.getAvailable()){
 			 throw new Exception("No cab available!");
 		 }
 
