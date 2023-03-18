@@ -48,14 +48,16 @@ public class CustomerServiceImpl implements CustomerService {
 		 List<Driver> driverList = driverRepository2.findAll();
 		 Driver driver = new Driver();
 		 Cab cab = null;
+		 boolean isCab = false;
 		 for(Driver d : driverList){
 			 cab = d.getCab();
 			 if(cab.getAvailable()){
 				 driver = d;
+				 isCab = true;
 				 break;
 			 }
 		 }
-		 if(cab != null && !cab.getAvailable()){
+		 if(!isCab){
 			 throw new Exception("No cab available!");
 		 }
 
